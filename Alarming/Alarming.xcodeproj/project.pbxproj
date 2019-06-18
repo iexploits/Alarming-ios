@@ -21,6 +21,8 @@
 		C644918222B8E5B400FA45AD /* DASAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918122B8E5B400FA45AD /* DASAddress.swift */; };
 		C644918422B8ED3F00FA45AD /* DASGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918322B8ED3F00FA45AD /* DASGeocoder.swift */; };
 		C644918A22B8F61000FA45AD /* DisasterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918922B8F61000FA45AD /* DisasterInfo.swift */; };
+		C644918C22B8FBA200FA45AD /* SNSFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918B22B8FBA100FA45AD /* SNSFeedView.swift */; };
+		C644918E22B8FBBB00FA45AD /* SNSFeedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C644918D22B8FBBB00FA45AD /* SNSFeedView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		C644918122B8E5B400FA45AD /* DASAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASAddress.swift; sourceTree = "<group>"; };
 		C644918322B8ED3F00FA45AD /* DASGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASGeocoder.swift; sourceTree = "<group>"; };
 		C644918922B8F61000FA45AD /* DisasterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisasterInfo.swift; sourceTree = "<group>"; };
+		C644918B22B8FBA100FA45AD /* SNSFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSFeedView.swift; sourceTree = "<group>"; };
+		C644918D22B8FBBB00FA45AD /* SNSFeedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SNSFeedView.xib; sourceTree = "<group>"; };
 		CA7BD6BF66427D08C8E500F8 /* Pods-Alarming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarming.debug.xcconfig"; path = "Target Support Files/Pods-Alarming/Pods-Alarming.debug.xcconfig"; sourceTree = "<group>"; };
 		CAF9C94B3C1D1D0D121270A9 /* Pods-AlarmingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmingTests.debug.xcconfig"; path = "Target Support Files/Pods-AlarmingTests/Pods-AlarmingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB99F723ED8C330A1A4D3DC8 /* Pods_AlarmingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +199,8 @@
 		C644918722B8F54D00FA45AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C644918B22B8FBA100FA45AD /* SNSFeedView.swift */,
+				C644918D22B8FBBB00FA45AD /* SNSFeedView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 				C644915D22B8E39A00FA45AD /* LaunchScreen.storyboard in Resources */,
 				C644915A22B8E39A00FA45AD /* Assets.xcassets in Resources */,
 				C644915522B8E39800FA45AD /* Main.storyboard in Resources */,
+				C644918E22B8FBBB00FA45AD /* SNSFeedView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +454,7 @@
 				C644915822B8E39800FA45AD /* Alarming.xcdatamodeld in Sources */,
 				C644918222B8E5B400FA45AD /* DASAddress.swift in Sources */,
 				C644915222B8E39800FA45AD /* MapViewController.swift in Sources */,
+				C644918C22B8FBA200FA45AD /* SNSFeedView.swift in Sources */,
 				C644915022B8E39800FA45AD /* AppDelegate.swift in Sources */,
 				C644918422B8ED3F00FA45AD /* DASGeocoder.swift in Sources */,
 			);
