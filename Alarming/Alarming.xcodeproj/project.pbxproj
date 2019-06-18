@@ -11,7 +11,7 @@
 		BBE8B1229279ECEE018387BA /* Pods_AlarmingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB99F723ED8C330A1A4D3DC8 /* Pods_AlarmingUITests.framework */; };
 		C50E9128B9F3C1AD26AE4C5A /* Pods_AlarmingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DA361A975AB04A56E275FA /* Pods_AlarmingTests.framework */; };
 		C644915022B8E39800FA45AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644914F22B8E39800FA45AD /* AppDelegate.swift */; };
-		C644915222B8E39800FA45AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644915122B8E39800FA45AD /* ViewController.swift */; };
+		C644915222B8E39800FA45AD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644915122B8E39800FA45AD /* MapViewController.swift */; };
 		C644915522B8E39800FA45AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C644915322B8E39800FA45AD /* Main.storyboard */; };
 		C644915822B8E39800FA45AD /* Alarming.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C644915622B8E39800FA45AD /* Alarming.xcdatamodeld */; };
 		C644915A22B8E39A00FA45AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C644915922B8E39A00FA45AD /* Assets.xcassets */; };
@@ -20,6 +20,7 @@
 		C644917322B8E39A00FA45AD /* AlarmingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644917222B8E39A00FA45AD /* AlarmingUITests.swift */; };
 		C644918222B8E5B400FA45AD /* DASAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918122B8E5B400FA45AD /* DASAddress.swift */; };
 		C644918422B8ED3F00FA45AD /* DASGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918322B8ED3F00FA45AD /* DASGeocoder.swift */; };
+		C644918A22B8F61000FA45AD /* DisasterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918922B8F61000FA45AD /* DisasterInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,7 @@
 		C334F877B867C65C2320FE20 /* Pods_Alarming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alarming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C644914C22B8E39800FA45AD /* Alarming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C644914F22B8E39800FA45AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C644915122B8E39800FA45AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C644915122B8E39800FA45AD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C644915422B8E39800FA45AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C644915722B8E39800FA45AD /* Alarming.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Alarming.xcdatamodel; sourceTree = "<group>"; };
 		C644915922B8E39A00FA45AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		C644917422B8E39A00FA45AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C644918122B8E5B400FA45AD /* DASAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASAddress.swift; sourceTree = "<group>"; };
 		C644918322B8ED3F00FA45AD /* DASGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASGeocoder.swift; sourceTree = "<group>"; };
+		C644918922B8F61000FA45AD /* DisasterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisasterInfo.swift; sourceTree = "<group>"; };
 		CA7BD6BF66427D08C8E500F8 /* Pods-Alarming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarming.debug.xcconfig"; path = "Target Support Files/Pods-Alarming/Pods-Alarming.debug.xcconfig"; sourceTree = "<group>"; };
 		CAF9C94B3C1D1D0D121270A9 /* Pods-AlarmingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmingTests.debug.xcconfig"; path = "Target Support Files/Pods-AlarmingTests/Pods-AlarmingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB99F723ED8C330A1A4D3DC8 /* Pods_AlarmingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,9 +135,10 @@
 		C644914E22B8E39800FA45AD /* Alarming */ = {
 			isa = PBXGroup;
 			children = (
+				C644918622B8F40900FA45AD /* UI */,
+				C644918522B8F3FC00FA45AD /* Controllers */,
 				C644918022B8E59200FA45AD /* DASGeocoder */,
 				C644914F22B8E39800FA45AD /* AppDelegate.swift */,
-				C644915122B8E39800FA45AD /* ViewController.swift */,
 				C644915322B8E39800FA45AD /* Main.storyboard */,
 				C644915922B8E39A00FA45AD /* Assets.xcassets */,
 				C644915B22B8E39A00FA45AD /* LaunchScreen.storyboard */,
@@ -170,6 +173,38 @@
 				C644918322B8ED3F00FA45AD /* DASGeocoder.swift */,
 			);
 			path = DASGeocoder;
+			sourceTree = "<group>";
+		};
+		C644918522B8F3FC00FA45AD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C644915122B8E39800FA45AD /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C644918622B8F40900FA45AD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C644918822B8F60000FA45AD /* Models */,
+				C644918722B8F54D00FA45AD /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C644918722B8F54D00FA45AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C644918822B8F60000FA45AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C644918922B8F61000FA45AD /* DisasterInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FA68F06AC7191D701B6666E0 /* Frameworks */ = {
@@ -408,9 +443,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C644918A22B8F61000FA45AD /* DisasterInfo.swift in Sources */,
 				C644915822B8E39800FA45AD /* Alarming.xcdatamodeld in Sources */,
 				C644918222B8E5B400FA45AD /* DASAddress.swift in Sources */,
-				C644915222B8E39800FA45AD /* ViewController.swift in Sources */,
+				C644915222B8E39800FA45AD /* MapViewController.swift in Sources */,
 				C644915022B8E39800FA45AD /* AppDelegate.swift in Sources */,
 				C644918422B8ED3F00FA45AD /* DASGeocoder.swift in Sources */,
 			);
