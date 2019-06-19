@@ -17,6 +17,27 @@ public enum DisasterType {
     case Thsunami
 }
 
+public enum SNSType {
+    case Twitter
+    case DCinside
+    case Facebook
+}
+
+class SNSFeed {
+    
+    private var type: SNSType
+    private var time: String
+    private var content: String
+    
+    init(type: SNSType, time: String, content: String)
+    {
+        self.type = type
+        self.time = time
+        self.content = content
+    }
+    
+}
+
 class DisasterInfo {
     
     /*
@@ -28,13 +49,61 @@ class DisasterInfo {
     
     private var type: DisasterType
     private var coordinate: CLLocationCoordinate2D?
+    private var location: String!
     private var weight: Double?
+    private var time: String!
     
-    init(type: DisasterType, location: CLLocationCoordinate2D, weight: Double)
+    init(type: DisasterType, coordinate: CLLocationCoordinate2D, location: String, weight: Double, time: String)
     {
         self.type = type
-        coordinate = location
+        self.coordinate = coordinate
+        self.location = location
         self.weight = weight
+        self.time = time
+    }
+    
+    func prepareDisasterName() -> String {
+        var name: String
+        switch type
+        {
+        case .EarthQuake:
+            name = "지 진"
+            break
+        case .Flood:
+            name = "홍 수"
+            break
+            
+        case .ForestFire:
+            name = "산 불"
+            break
+            
+        case .Thsunami:
+            name = "쓰 나 미"
+            break
+        }
+        return name
+    }
+    
+    func prepareDisasterImage() -> UIImage {
+        var image: UIImage
+        switch type
+        {
+        case .EarthQuake:
+            image = UIImage(named: "EarthQuake")!
+            break
+        case .Flood:
+            image = UIImage(named: "EarthQuake")!
+            break
+            
+        case .ForestFire:
+            image = UIImage(named: "ForestFire")!
+            break
+            
+        case .Thsunami:
+            image = UIImage(named: "ForestFire")!
+            break
+        }
+        return image
     }
     
     
