@@ -24,6 +24,7 @@
 		C644918C22B8FBA200FA45AD /* SNSFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918B22B8FBA100FA45AD /* SNSFeedView.swift */; };
 		C644918E22B8FBBB00FA45AD /* SNSFeedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C644918D22B8FBBB00FA45AD /* SNSFeedView.xib */; };
 		C644919022BA776800FA45AD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918F22BA776800FA45AD /* DetailViewController.swift */; };
+		C644919322BAA1C400FA45AD /* DisasterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644919222BAA1C400FA45AD /* DisasterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		C644918B22B8FBA100FA45AD /* SNSFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSFeedView.swift; sourceTree = "<group>"; };
 		C644918D22B8FBBB00FA45AD /* SNSFeedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SNSFeedView.xib; sourceTree = "<group>"; };
 		C644918F22BA776800FA45AD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C644919222BAA1C400FA45AD /* DisasterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisasterManager.swift; sourceTree = "<group>"; };
 		CA7BD6BF66427D08C8E500F8 /* Pods-Alarming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarming.debug.xcconfig"; path = "Target Support Files/Pods-Alarming/Pods-Alarming.debug.xcconfig"; sourceTree = "<group>"; };
 		CAF9C94B3C1D1D0D121270A9 /* Pods-AlarmingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmingTests.debug.xcconfig"; path = "Target Support Files/Pods-AlarmingTests/Pods-AlarmingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB99F723ED8C330A1A4D3DC8 /* Pods_AlarmingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 		C644914E22B8E39800FA45AD /* Alarming */ = {
 			isa = PBXGroup;
 			children = (
+				C644919122BAA1B200FA45AD /* Utils */,
 				C644918622B8F40900FA45AD /* UI */,
 				C644918522B8F3FC00FA45AD /* Controllers */,
 				C644918022B8E59200FA45AD /* DASGeocoder */,
@@ -214,6 +217,14 @@
 				C644918922B8F61000FA45AD /* DisasterInfo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C644919122BAA1B200FA45AD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C644919222BAA1C400FA45AD /* DisasterManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FA68F06AC7191D701B6666E0 /* Frameworks */ = {
@@ -461,6 +472,7 @@
 				C644915022B8E39800FA45AD /* AppDelegate.swift in Sources */,
 				C644918422B8ED3F00FA45AD /* DASGeocoder.swift in Sources */,
 				C644919022BA776800FA45AD /* DetailViewController.swift in Sources */,
+				C644919322BAA1C400FA45AD /* DisasterManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

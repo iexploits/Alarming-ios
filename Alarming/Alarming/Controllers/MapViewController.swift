@@ -39,18 +39,21 @@ class MapViewController: UIViewController{
          
         */
         
-        DASGeocoder.shared.geocode("울진군"){ (results, error) in
+        DASGeocoder.shared.geocode("포항시청"){ (results, error) in
             
             // Update UI
             if let address = results?.first, error == nil {
                 DispatchQueue.main.async {
-                    let circleCenter = CLLocationCoordinate2D(latitude: address.coordinate!.latitude, longitude: address.coordinate!.longitude)
-                    let circ = GMSCircle(position: circleCenter, radius: 10000)
-                    circ.fillColor = UIColor(red: 0, green: 0, blue: 0.35, alpha: 0.30)
-                    circ.strokeColor = .red
-                    circ.strokeWidth = 0.5
-                    circ.isTappable = true
+                    let coordinate = CLLocationCoordinate2D(latitude:address.coordinate!.latitude, longitude:address.coordinate!.longitude)
+                    let location = "포항시청"
+                    let type = DisasterType.EarthQuake
+                    let weight = 1.5
+                    let time = "2019-08-13"
                     
+                    let disasterInfo = DisasterInfo(type: type, coordinate: coordinate, location: location, weight: weight, time: time)
+                    
+                    let circ = disasterInfo.prepareDrawing()
+                    circ.isTappable = true
                     circ.map = self.dasMAP
                 }
             }

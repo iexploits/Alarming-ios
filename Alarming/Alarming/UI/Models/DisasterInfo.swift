@@ -53,6 +53,8 @@ class DisasterInfo {
     private var weight: Double?
     private var time: String!
     
+    private var feed_list: Array<SNSFeed>
+    
     init(type: DisasterType, coordinate: CLLocationCoordinate2D, location: String, weight: Double, time: String)
     {
         self.type = type
@@ -60,6 +62,16 @@ class DisasterInfo {
         self.location = location
         self.weight = weight
         self.time = time
+        self.feed_list = Array<SNSFeed>()
+    }
+    
+    func ADD_snsFeed(type: SNSType, time: String, content: String) {
+        feed_list.append(
+            SNSFeed(type: type, time: time, content: content))
+    }
+    
+    func prepareSNSList() -> Array<SNSFeed> {
+        return feed_list
     }
     
     func prepareDisasterName() -> String {
@@ -110,29 +122,29 @@ class DisasterInfo {
     // It's for Drawing Circle for Each Disaster Info.
     // It'll return GoogleMapsService Circle Object to use.
     func prepareDrawing() -> GMSCircle {
-        let circle = GMSCircle(position: coordinate!, radius: 1000 * weight!)
+        let circle = GMSCircle(position: coordinate!, radius: 10000 * weight!)
         
-        circle.strokeWidth = 3
+        circle.strokeWidth = 0.8
         
         switch type
         {
         case .EarthQuake:
-            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.05)
+            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.20)
             circle.strokeColor = .red
             break
             
         case .Flood:
-            circle.fillColor = UIColor(red: 0, green: 0.35, blue: 0, alpha: 0.05)
+            circle.fillColor = UIColor(red: 0, green: 0.35, blue: 0, alpha: 0.20)
             circle.strokeColor = .green
             break
             
         case .ForestFire:
-            circle.fillColor = UIColor(red: 0, green: 0, blue: 0.35, alpha: 0.05)
+            circle.fillColor = UIColor(red: 0, green: 0, blue: 0.35, alpha: 0.20)
             circle.strokeColor = .blue
             break
             
         case .Thsunami:
-            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0.35, alpha: 0.05)
+            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0.35, alpha: 0.20)
             circle.strokeColor = .cyan
             break
         }
