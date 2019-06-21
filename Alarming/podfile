@@ -7,6 +7,7 @@ target 'Alarming' do
 
   # Pods for Alarming
   pod 'GoogleMaps'
+  pod 'SideMenuSwift'
 
   target 'AlarmingTests' do
     inherit! :search_paths

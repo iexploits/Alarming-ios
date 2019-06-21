@@ -16,10 +16,47 @@ class MapViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         initCamera()
-        geocodeTest()
+        
+        getDisasterData(location: "천마산", type: DisasterType.ForestFire, weight: 1.4, time: "2019-06-21")
+        getDisasterData(location: "포항시청", type: DisasterType.EarthQuake, weight: 2.0, time: "2019-06-21")
     }
+    
+    @IBAction func sideViewControllerButtonDidClicked(_ sender: Any)
+    {
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "SideViewController") else { return }
+        viewController.view.backgroundColor = .white
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func presentViewControllerButtonClicked(_ sender: UIButton)
+    {
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "SideViewController") else { return }
+        viewController.view.backgroundColor = .white
+        let navigationController = UINavigationController(rootViewController: viewController)
+        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissViewController))
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    @objc func dismissViewController() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func menuBttonDidClicked(_ sender: Any)
+    {
+        sideMenuController?.revealMenu()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        return .default
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
+    // Initiating for Side Menu Controller Completed
     
     func initCamera()
     {
@@ -31,26 +68,23 @@ class MapViewController: UIViewController{
         dasMAP.isMyLocationEnabled = true
     }
     
-    func geocodeTest()
+    func getDisasterData(location: String, type: DisasterType, weight: Double, time: String)
     {
         /**
          지진 : 파란색
          산불, 화재 : 빨간색
          
         */
-        
-        DASGeocoder.shared.geocode("포항시청"){ (results, error) in
+        DASGeocoder.shared.geocode(location){ (results, error) in
             
             // Update UI
             if let address = results?.first, error == nil {
                 DispatchQueue.main.async {
                     let coordinate = CLLocationCoordinate2D(latitude:address.coordinate!.latitude, longitude:address.coordinate!.longitude)
-                    let location = "포항시청"
-                    let type = DisasterType.EarthQuake
-                    let weight = 1.5
-                    let time = "2019-08-13"
                     
                     let disasterInfo = DisasterInfo(type: type, coordinate: coordinate, location: location, weight: weight, time: time)
+                    
+                    DisasterManager.sharedInstance.ADD_info(dInfo: disasterInfo)
                     
                     let circ = disasterInfo.prepareDrawing()
                     circ.isTappable = true
@@ -59,42 +93,14 @@ class MapViewController: UIViewController{
             }
             
         }
-        
-        DASGeocoder.shared.geocode("천마산"){ (results, error) in
-            
-            // Update UI
-            if let address = results?.first, error == nil {
-                DispatchQueue.main.async {
-                    let circleCenter = CLLocationCoordinate2D(latitude: address.coordinate!.latitude, longitude: address.coordinate!.longitude)
-                    let circ = GMSCircle(position: circleCenter, radius: 20000)
-                    circ.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.30)
-                    circ.strokeColor = .purple
-                    circ.strokeWidth = 0.5
-                    circ.isTappable = true
-                    
-                    circ.map = self.dasMAP
-                }
-            }
-            
-        }
-        
-        
-        DASGeocoder.shared.geocode("대구시청"){ (results, error) in
-            
-            // Update UI
-            if let address = results?.first, error == nil {
-                DispatchQueue.main.async {
-                    let circleCenter = CLLocationCoordinate2D(latitude: address.coordinate!.latitude, longitude: address.coordinate!.longitude)
-                    let circ = GMSCircle(position: circleCenter, radius: 30000)
-                    circ.fillColor = UIColor(red: 0, green: 0.35, blue: 0, alpha: 0.30)
-                    circ.strokeColor = .blue
-                    circ.strokeWidth = 0.5
-                    circ.isTappable = true
-                    
-                    circ.map = self.dasMAP
-                }
-            }
-            
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is DetailViewController
+        {
+            let vc = segue.destination as? DetailViewController
+            vc?.disaster = nil
         }
     }
     
@@ -103,14 +109,8 @@ class MapViewController: UIViewController{
 extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
-        // create the alert
-        let alert = UIAlertController(title: "My Title", message: "This is my message.", preferredStyle: UIAlertController.Style.alert)
         
-        // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "getDetailPage", sender: self)
     }
     
 }

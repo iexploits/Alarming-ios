@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleMaps
+import SideMenuSwift
 
 let GMapsAPIKey = "AIzaSyBtSjas8iIDwAIEyOZUbGTwhsScM6MdxYs"
 

@@ -12,7 +12,7 @@ class DisasterManager {
     
     static let sharedInstance = DisasterManager()
     
-    private var disaster_list = Array<DisasterInfo>()
+    private var disaster_list: Array<DisasterInfo> = []
     
     init()
     {

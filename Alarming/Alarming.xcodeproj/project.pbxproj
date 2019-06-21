@@ -21,10 +21,10 @@
 		C644918222B8E5B400FA45AD /* DASAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918122B8E5B400FA45AD /* DASAddress.swift */; };
 		C644918422B8ED3F00FA45AD /* DASGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918322B8ED3F00FA45AD /* DASGeocoder.swift */; };
 		C644918A22B8F61000FA45AD /* DisasterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918922B8F61000FA45AD /* DisasterInfo.swift */; };
-		C644918C22B8FBA200FA45AD /* SNSFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918B22B8FBA100FA45AD /* SNSFeedView.swift */; };
-		C644918E22B8FBBB00FA45AD /* SNSFeedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C644918D22B8FBBB00FA45AD /* SNSFeedView.xib */; };
 		C644919022BA776800FA45AD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644918F22BA776800FA45AD /* DetailViewController.swift */; };
 		C644919322BAA1C400FA45AD /* DisasterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644919222BAA1C400FA45AD /* DisasterManager.swift */; };
+		C644919B22BBF91700FA45AD /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644919A22BBF91700FA45AD /* SideViewController.swift */; };
+		C644919D22BC045000FA45AD /* SNSFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644919C22BC045000FA45AD /* SNSFeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +68,10 @@
 		C644918122B8E5B400FA45AD /* DASAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASAddress.swift; sourceTree = "<group>"; };
 		C644918322B8ED3F00FA45AD /* DASGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASGeocoder.swift; sourceTree = "<group>"; };
 		C644918922B8F61000FA45AD /* DisasterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisasterInfo.swift; sourceTree = "<group>"; };
-		C644918B22B8FBA100FA45AD /* SNSFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSFeedView.swift; sourceTree = "<group>"; };
-		C644918D22B8FBBB00FA45AD /* SNSFeedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SNSFeedView.xib; sourceTree = "<group>"; };
 		C644918F22BA776800FA45AD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C644919222BAA1C400FA45AD /* DisasterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisasterManager.swift; sourceTree = "<group>"; };
+		C644919A22BBF91700FA45AD /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
+		C644919C22BC045000FA45AD /* SNSFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSFeedCell.swift; sourceTree = "<group>"; };
 		CA7BD6BF66427D08C8E500F8 /* Pods-Alarming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarming.debug.xcconfig"; path = "Target Support Files/Pods-Alarming/Pods-Alarming.debug.xcconfig"; sourceTree = "<group>"; };
 		CAF9C94B3C1D1D0D121270A9 /* Pods-AlarmingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmingTests.debug.xcconfig"; path = "Target Support Files/Pods-AlarmingTests/Pods-AlarmingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB99F723ED8C330A1A4D3DC8 /* Pods_AlarmingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlarmingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +189,7 @@
 			children = (
 				C644915122B8E39800FA45AD /* MapViewController.swift */,
 				C644918F22BA776800FA45AD /* DetailViewController.swift */,
+				C644919A22BBF91700FA45AD /* SideViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,8 +206,7 @@
 		C644918722B8F54D00FA45AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C644918B22B8FBA100FA45AD /* SNSFeedView.swift */,
-				C644918D22B8FBBB00FA45AD /* SNSFeedView.xib */,
+				C644919C22BC045000FA45AD /* SNSFeedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,6 +249,7 @@
 				C644914922B8E39800FA45AD /* Frameworks */,
 				C644914A22B8E39800FA45AD /* Resources */,
 				E0BCF1EFA7FE3611892C6495 /* [CP] Copy Pods Resources */,
+				AB63B8FD0B94D2B7DEDF2640 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,7 +349,6 @@
 				C644915D22B8E39A00FA45AD /* LaunchScreen.storyboard in Resources */,
 				C644915A22B8E39A00FA45AD /* Assets.xcassets in Resources */,
 				C644915522B8E39800FA45AD /* Main.storyboard in Resources */,
-				C644918E22B8FBBB00FA45AD /* SNSFeedView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +413,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AB63B8FD0B94D2B7DEDF2640 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alarming/Pods-Alarming-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SideMenuSwift/SideMenuSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alarming/Pods-Alarming-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AF315B476E430444E4E4DFA2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,8 +490,9 @@
 				C644915822B8E39800FA45AD /* Alarming.xcdatamodeld in Sources */,
 				C644918222B8E5B400FA45AD /* DASAddress.swift in Sources */,
 				C644915222B8E39800FA45AD /* MapViewController.swift in Sources */,
-				C644918C22B8FBA200FA45AD /* SNSFeedView.swift in Sources */,
+				C644919B22BBF91700FA45AD /* SideViewController.swift in Sources */,
 				C644915022B8E39800FA45AD /* AppDelegate.swift in Sources */,
+				C644919D22BC045000FA45AD /* SNSFeedCell.swift in Sources */,
 				C644918422B8ED3F00FA45AD /* DASGeocoder.swift in Sources */,
 				C644919022BA776800FA45AD /* DetailViewController.swift in Sources */,
 				C644919322BAA1C400FA45AD /* DisasterManager.swift in Sources */,

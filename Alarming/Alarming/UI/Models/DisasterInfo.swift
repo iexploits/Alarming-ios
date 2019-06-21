@@ -75,25 +75,17 @@ class DisasterInfo {
     }
     
     func prepareDisasterName() -> String {
-        var name: String
         switch type
         {
         case .EarthQuake:
-            name = "지 진"
-            break
+            return "지 진"
         case .Flood:
-            name = "홍 수"
-            break
-            
+            return "홍 수"
         case .ForestFire:
-            name = "산 불"
-            break
-            
+            return "산 불"
         case .Thsunami:
-            name = "쓰 나 미"
-            break
+            return "쓰 나 미"
         }
-        return name
     }
     
     func prepareDisasterImage() -> UIImage {
@@ -129,8 +121,8 @@ class DisasterInfo {
         switch type
         {
         case .EarthQuake:
-            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.20)
-            circle.strokeColor = .red
+            circle.fillColor = UIColor(red: 0, green: 0, blue: 0.35, alpha: 0.20)
+            circle.strokeColor = .blue
             break
             
         case .Flood:
@@ -139,8 +131,8 @@ class DisasterInfo {
             break
             
         case .ForestFire:
-            circle.fillColor = UIColor(red: 0, green: 0, blue: 0.35, alpha: 0.20)
-            circle.strokeColor = .blue
+            circle.fillColor = UIColor(red: 0.35, green: 0, blue: 0, alpha: 0.20)
+            circle.strokeColor = .red
             break
             
         case .Thsunami:
